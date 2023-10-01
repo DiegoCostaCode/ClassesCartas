@@ -3,21 +3,57 @@ package Carta;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Carta {
-    private String Nome;
-    private String URLdaimagem;
-    private String Lang;
-    private String ManaCost;
-    private String Type_Line;
-    private String descricao;
-    private int Power;
-    private int Toughness;
-    private String Ilustrador;
-    private int Data;
-    private String Deck;
-    private String Print;
+public class Carta {
+    private String name;
+    private String lang;
+    private String released_at;
+    private String manaCost;
+    private String type_Line;
+    private String set_name;
+    private String illustrated_by;
+    private String rarity;
+    private Boolean print;
+    private int power;
+    private int toughness;
 
-    private List<String> Related_Uris = new ArrayList<>();
-    private List<String> Purchase_Uris = new ArrayList<>();
+    public Carta(){}
 
+    public Carta(String name, String lang, String released_at, String manaCost, String type_Line) {
+        this.name = name;
+        this.lang = lang;
+        this.released_at = released_at;
+        this.manaCost = manaCost;
+        this.type_Line = type_Line;
+    }
+
+    public Carta(String name, String lang, String released_at, String manaCost, String type_Line, String set_name, String illustrated_by, String rarity, Boolean print, int power, int toughness) {
+        this.name = name;
+        this.lang = lang;
+        this.released_at = released_at;
+        this.manaCost = manaCost;
+        this.type_Line = type_Line;
+        this.set_name = set_name;
+        this.illustrated_by = illustrated_by;
+        this.rarity = rarity;
+        this.print = print;
+        this.power = power;
+        this.toughness = toughness;
+    }
+
+    @Override
+    public String toString() {
+        return "///////// Carta /////////" +
+                "\r\n name: " + name +
+                "\r\n lang: " + lang +
+                "\r\n released_at: " + released_at +
+                "\r\n manaCost: " + manaCost +
+                "\r\n type_Line: " + type_Line +
+                "\r\n set_name: " + set_name +
+                "\r\n illustrated_by='" + illustrated_by +
+                "\r\n rarity: " + rarity +
+                "\r\n print: " + print +
+                "\r\n power: " + power +
+                "/ toughness: " + toughness;
+    }
 }
+
